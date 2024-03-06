@@ -1,0 +1,18 @@
+{
+  "toDos": [
+    {
+      "id": 1,
+      "title": "타입스크립트 어렵네",
+      "content": "쉽지 않아",
+      "created": 20240306,
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "title": "타입스크립트",
+      "content": "아주 어려워",
+      "created": 20240306,
+      "isDone": true
+    }
+  ]
+}
