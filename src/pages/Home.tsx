@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { getToDos } from "../apis/todos";
 import Header from "../components/units/layout/Header";
 import styled from "styled-components";
+import TodoList from "../components/units/homeComponents/TodoList";
 
 const Home = () => {
   useEffect(() => {
@@ -14,6 +15,8 @@ const Home = () => {
     <HomeContainer>
       <HomeItems>
         <Header />
+        <TodoList isDone={false} />
+        <TodoList isDone={true} />
       </HomeItems>
     </HomeContainer>
   );
