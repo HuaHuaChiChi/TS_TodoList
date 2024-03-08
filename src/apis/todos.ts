@@ -38,7 +38,7 @@ export const addToDos = async (newTodo: NewToDo): Promise<void> => {
   }
 };
 
-export const deleteToDo = async (id: string) => {
+export const deleteToDo = async (id: string): Promise<void> => {
   try {
     await dbUrl.delete(`${id}`);
   } catch (error) {
@@ -46,7 +46,7 @@ export const deleteToDo = async (id: string) => {
   }
 };
 
-export const toggleToDo = async (id: string) => {
+export const toggleToDo = async (id: string): Promise<void> => {
   try {
     const todo = await dbUrl.get(`/${id}`);
     console.log(todo);
