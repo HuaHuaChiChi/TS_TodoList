@@ -20,4 +20,5 @@ const TodoListContainer = styled.div`
 
 const Text = styled.h2`
   font-size: 40px;
+  margin: 10px 0;
 `;

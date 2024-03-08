@@ -5,7 +5,7 @@ const dbUrl = axios.create({
 });
 
 export type ToDo = {
-  id: number;
+  id: string;
   title: string;
   content: string;
   created: number;
@@ -30,9 +30,27 @@ export const getToDos = async (): Promise<ToDo[]> => {
   }
 };
 
-export const addToDos = async (newTodo: NewToDo) => {
+export const addToDos = async (newTodo: NewToDo): Promise<void> => {
   try {
     await dbUrl.post("", newTodo);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const deleteToDo = async (id: string) => {
+  try {
+    await dbUrl.delete(`${id}`);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const toggleToDo = async (id: string) => {
+  try {
+    const todo = await dbUrl.get(`/${id}`);
+    console.log(todo);
+    await dbUrl.patch(`${id}`, { isDone: !todo.data.isDone });
   } catch (error) {
     console.error(error);
   }
