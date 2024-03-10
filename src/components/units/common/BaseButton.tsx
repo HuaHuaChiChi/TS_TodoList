@@ -13,7 +13,7 @@ const BaseButton: FC<BaseButtonProps> = ({ children, onClick }) => {
   } else if (children === "완료") {
     color = "green";
   } else if (children === "취소") {
-    color = "gary";
+    color = "#505050";
   } else {
     color = "blue";
   }
